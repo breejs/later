@@ -1,7 +1,7 @@
 {
-  "name": "later",
+  "name": "@breejs/later",
   "version": "1.2.0",
-  "description": "Determine later (or previous) occurrences of recurring schedules",
+  "description": "Maintained fork of later. Determine later (or previous) occurrences of recurring schedules",
   "keywords": [
     "schedule",
     "occurrences",
@@ -11,7 +11,7 @@
   "author": "BunKat <bill@levelstory.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/bunkat/later.git"
+    "url": "git://github.com/breejs/later.git"
   },
   "main": "index.js",
   "browserify": "index-browserify.js",

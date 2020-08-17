@@ -1,4 +1,4 @@
-## This project is no longer being maintained. It should be treated as sample code on one technique to calculate future instances of complex schedules. If you are looking to fire a task every 1 minute, use a cron scheduler instead.
+## This project is a maintained fork of Later
 
 # [Later](http://bunkat.github.io/later/) [![Build Status](https://travis-ci.org/bunkat/later.svg)](https://travis-ci.org/bunkat/later)
 
@@ -17,11 +17,11 @@ Types of schedules supported by _Later_:
 ## Installation
 Using npm:
 
-    $ npm install later
+    $ npm install @breejs/later
 
 Using bower:
 
-    $ bower install later
+    $ bower install @breejs/later
 
 ## Building
 
@@ -54,6 +54,10 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 Have a bug or a feature request? [Please open a new issue](https://github.com/bunkat/later/issues).
 
 ## Change Log
+
+### @breejs/later v2.0.0
+
+* feat: merged https://github.com/bunkat/later/pull/208 and https://github.com/bunkat/later/pull/188
 
 ### Later v1.2.0
 * Implemented predefined scheduling definitions for cron
