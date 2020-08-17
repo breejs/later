@@ -1,6 +1,6 @@
 {
   "name": "@breejs/later",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Maintained fork of later. Determine later (or previous) occurrences of recurring schedules",
   "keywords": [
     "schedule",
