@@ -51,7 +51,7 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 
 ## Bug tracker
 
-Have a bug or a feature request? [Please open a new issue](https://github.com/bunkat/later/issues).
+Have a bug or a feature request? [Please open a new issue](https://github.com/breejs/later/issues).
 
 ## Change Log
 
