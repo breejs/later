@@ -35,7 +35,7 @@ Types of schedules supported by _Later_:
 
 ## Documentation
 
-See <https://breejs.github.com/later> for complete documentation and usage.
+See <https://breejs.github.io/later/> for complete documentation and usage.
 
 
 ## Install
