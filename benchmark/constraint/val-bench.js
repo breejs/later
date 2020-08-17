@@ -1,9 +1,9 @@
-var Benchmark = require('benchmark'),
-    later = require('../../index'),
-    suite = new Benchmark.Suite('val');
+const Benchmark = require('benchmark');
+const later = require('../..');
+const suite = new Benchmark.Suite('val');
 
 suite
-/*.add('year', function() {
+  /* .add('year', function() {
   later.year.val(new Date(2012, 4, 15, 20, 15, 13));
 })
 .add('month', function() {
@@ -26,11 +26,11 @@ suite
 })
 .add('dayofweekcount', function() {
   later.dayOfWeekCount.val(new Date(2012, 4, 15, 20, 15, 13));
-})*/
-.add('dayofyear', function() {
-  later.dayOfYear.val(new Date(2012, 4, 15, 20, 15, 13));
-})
-/*.add('time', function() {
+}) */
+  .add('dayofyear', function () {
+    later.dayOfYear.val(new Date(2012, 4, 15, 20, 15, 13));
+  })
+  /* .add('time', function() {
   later.time.val(new Date(2012, 4, 15, 20, 15, 13));
 })
 .add('weekofmonth', function() {
@@ -38,8 +38,8 @@ suite
 })
 .add('weekofyear', function() {
   later.weekOfYear.val(new Date(2012, 4, 15, 20, 15, 13));
-})*/
-.on('cycle', function(event) {
-  console.log(String(event.target));
-})
-.run({async: true});
+}) */
+  .on('cycle', function (event) {
+    console.log(String(event.target));
+  })
+  .run({ async: true });

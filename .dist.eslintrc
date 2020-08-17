@@ -1,0 +1,21 @@
+{
+  "extends": ["eslint:recommended"],
+  "env": {
+    "node": false,
+    "browser": true,
+    "amd": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "plugins": ["compat"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-cond-assign": "warn"
+  },
+  "globals": {
+  },
+  "settings": {
+    "polyfills": [
+    ]
+  }
+}

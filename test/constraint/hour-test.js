@@ -1,10 +1,9 @@
-var later = require('../../index'),
-    runner = require('./runner')(later, later.hour),
-    should = require('should');
+const later = require('../..');
+const runner = require('./runner')(later, later.hour);
+const should = require('should');
 
-describe('Later.hour', function() {
-
-  var tests = [
+describe('Later.hour', function () {
+  const tests = [
     {
       // first second of year
       date: new Date(2008, 0, 1),
@@ -112,5 +111,4 @@ describe('Later.hour', function() {
   ];
 
   runner.run(tests);
-
 });

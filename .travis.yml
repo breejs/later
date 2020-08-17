@@ -1,5 +1,11 @@
-script: "npm test"
 language: node_js
 node_js:
-  - "0.10"
-  - "node"
+  - 6
+  - 8
+  - 10
+  - 12
+  - 14
+script:
+  - npm run test-coverage
+after_success:
+  - npm run coverage

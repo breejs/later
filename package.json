@@ -1,36 +1,206 @@
 {
   "name": "@breejs/later",
-  "version": "2.0.1",
   "description": "Maintained fork of later. Determine later (or previous) occurrences of recurring schedules",
-  "keywords": [
-    "schedule",
-    "occurrences",
-    "recur",
-    "cron"
-  ],
+  "version": "2.0.1",
   "author": "BunKat <bill@levelstory.com>",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/breejs/later.git"
+  "bugs": {
+    "url": "https://github.com/breejs/later/issues",
+    "email": "niftylettuce@gmail.com"
   },
-  "main": "index.js",
-  "browserify": "index-browserify.js",
-  "jam": {
-    "main": "later.js",
-    "shim": {
-      "exports": "later"
+  "contributors": [
+    "BunKat <bill@levelstory.com>",
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "babelify": "^10.0.0",
+    "benchmark": "*",
+    "browserify": "^16.5.2",
+    "codecov": "latest",
+    "cross-env": "latest",
+    "eslint": "^7.7.0",
+    "eslint-config-xo-lass": "latest",
+    "eslint-plugin-compat": "^3.8.0",
+    "eslint-plugin-node": "^11.1.0",
+    "fixpack": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "mocha": "*",
+    "nyc": "latest",
+    "remark-cli": "latest",
+    "remark-preset-github": "latest",
+    "should": ">=13.2.3",
+    "tinyify": "^3.0.0",
+    "xo": "^0.33.0"
+  },
+  "engines": {
+    "node": ">= 6.4.0"
+  },
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "homepage": "https://github.com/breejs/later",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "devDependencies": {
-    "smash": "~0.0.8",
-    "mocha": "*",
-    "should": ">=0.6.3",
-    "jslint": "*",
-    "uglify-js": "*",
-    "benchmark": "*"
-  },
+  "jsdelivr": "dist/later.min.js",
+  "keywords": [
+    "agenda",
+    "async",
+    "await",
+    "bee",
+    "bee",
+    "bree",
+    "bull",
+    "bull",
+    "callback",
+    "cancel",
+    "cancelable",
+    "child",
+    "clear",
+    "cron",
+    "cronjob",
+    "crontab",
+    "date",
+    "dates",
+    "day",
+    "dayjs",
+    "delay",
+    "english",
+    "express",
+    "expression",
+    "frequencies",
+    "frequency",
+    "frequent",
+    "friendly",
+    "graceful",
+    "human",
+    "humans",
+    "interval",
+    "job",
+    "jobs",
+    "js",
+    "koa",
+    "koatiming",
+    "lad",
+    "lass",
+    "later",
+    "moment",
+    "momentjs",
+    "mongo",
+    "mongodb",
+    "mongoose",
+    "p-cancel",
+    "p-cancelable",
+    "p-retry",
+    "parse",
+    "parser",
+    "pretty",
+    "process",
+    "processors",
+    "promise",
+    "promises",
+    "queue",
+    "queues",
+    "readable",
+    "recur",
+    "recurring",
+    "redis",
+    "redis",
+    "reload",
+    "restart",
+    "run",
+    "runner",
+    "schedule",
+    "scheduler",
+    "setup",
+    "spawn",
+    "tab",
+    "task",
+    "tasker",
+    "time",
+    "timeout",
+    "timer",
+    "timers",
+    "translated",
+    "universalify",
+    "worker",
+    "workers"
+  ],
   "license": "MIT",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/breejs/later"
+  },
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/**/*-test.js --reporter dot"
+    "benchmark": "benchmark/constraint/next-bench.js && benchmark/core/schedule-bench.js",
+    "browserify": "browserify src/index.js -o dist/later.js -s later -g [ babelify --configFile ./.dist.babelrc ]",
+    "build": "npm run build:clean && npm run build:lib && npm run build:dist",
+    "build:clean": "rimraf lib dist",
+    "build:dist": "npm run browserify && npm run minify",
+    "build:lib": "babel --config-file ./.lib.babelrc src --out-dir lib",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "yarn run lint:js && yarn run lint:md && yarn run lint:lib && yarn run lint:dist",
+    "lint:dist": "eslint --no-inline-config -c .dist.eslintrc dist",
+    "lint:js": "xo",
+    "lint:lib": "eslint -c .lib.eslintrc lib",
+    "lint:md": "remark . -qfo",
+    "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/later.min.js -s later -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
+    "nyc": "cross-env NODE_ENV=test nyc mocha test/**/*-test.js --reporter dot",
+    "pretest": "yarn run build && yarn run lint",
+    "test": "cross-env NODE_ENV=test mocha test/**/*-test.js --reporter dot",
+    "test-coverage": "cross-env NODE_ENV=test nyc yarn run test"
+  },
+  "unpkg": "dist/later.min.js",
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ],
+    "rules": {
+      "no-multi-assign": "warn",
+      "no-return-assign": "warn",
+      "max-params": "warn",
+      "complexity": "warn",
+      "guard-for-in": "warn",
+      "new-cap": "warn",
+      "prefer-rest-params": "warn",
+      "unicorn/prevent-abbreviations": "warn",
+      "no-case-declarations": "warn"
+    },
+    "overrides": [
+      {
+        "files": "example/**/*.js",
+        "rules": {
+          "no-unused-vars": "warn"
+        }
+      },
+      {
+        "files": "test/**/*.js",
+        "env": [
+          "mocha"
+        ],
+        "rules": {
+          "new-cap": "warn",
+          "no-unused-vars": "warn",
+          "unicorn/prevent-abbreviations": "warn"
+        }
+      }
+    ]
   }
 }
