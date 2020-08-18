@@ -1,7 +1,7 @@
 {
   "name": "@breejs/later",
   "description": "Maintained fork of later. Determine later (or previous) occurrences of recurring schedules",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "author": "BunKat <bill@levelstory.com>",
   "bugs": {
     "url": "https://github.com/breejs/later/issues",
