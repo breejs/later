@@ -1,4 +1,4 @@
-const later = require('..'); // require('later') if installed via npm
+const later = require('..'); // require('@breejs/later') if installed via npm
 
 // create the desired schedule
 const sched = later.parse.text('every 5 mins on the 30th sec');

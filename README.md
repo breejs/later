@@ -58,7 +58,7 @@ yarn add @breejs/later
 ### Node
 
 ```js
-const later = require('later');
+const later = require('@breejs/later');
 
 console.log(later);
 ```
