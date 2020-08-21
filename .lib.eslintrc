@@ -3,7 +3,8 @@
   "env": { "browser": true" },
   "plugins": ["compat"],
   "rules": {
-    "no-cond-assign": "warn"
+    "no-cond-assign": "warn",
+    "no-unused-vars": "warn"
   },
   "settings": {
     "polyfills": []

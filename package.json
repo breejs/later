@@ -173,15 +173,23 @@
       "xo-lass"
     ],
     "rules": {
-      "no-multi-assign": "warn",
-      "no-return-assign": "warn",
-      "max-params": "warn",
       "complexity": "warn",
+      "default-case": "warn",
+      "eqeqeq": "warn",
       "guard-for-in": "warn",
+      "max-params": "warn",
       "new-cap": "warn",
+      "no-case-declarations": "warn",
+      "no-multi-assign": "warn",
+      "no-negated-condition": "warn",
+      "no-return-assign": "warn",
+      "no-unused-vars": "warn",
+      "no-var": "warn",
+      "prefer-const": "warn",
       "prefer-rest-params": "warn",
-      "unicorn/prevent-abbreviations": "warn",
-      "no-case-declarations": "warn"
+      "unicorn/no-fn-reference-in-iterator": "warn",
+      "unicorn/prefer-number-properties": "warn",
+      "unicorn/prevent-abbreviations": "warn"
     },
     "overrides": [
       {

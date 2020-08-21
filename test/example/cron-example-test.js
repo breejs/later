@@ -10,11 +10,16 @@ describe('Cron Examples', function () {
     const start = new Date('2013-03-21T03:05:23Z');
     const end = new Date('2013-03-26T03:40:10Z');
     const expected = [
-      new Date('2013-03-21T12:00:00'),
-      new Date('2013-03-22T12:00:00'),
-      new Date('2013-03-23T12:00:00'),
-      new Date('2013-03-24T12:00:00'),
-      new Date('2013-03-25T12:00:00')
+      new Date(Date.UTC(2013, 2, 21, 12, 0, 0)),
+      new Date(Date.UTC(2013, 2, 22, 12, 0, 0)),
+      new Date(Date.UTC(2013, 2, 23, 12, 0, 0)),
+      new Date(Date.UTC(2013, 2, 24, 12, 0, 0)),
+      new Date(Date.UTC(2013, 2, 25, 12, 0, 0))
+      // new Date('2013-03-21T12:00:00'),
+      // new Date('2013-03-22T12:00:00'),
+      // new Date('2013-03-23T12:00:00'),
+      // new Date('2013-03-24T12:00:00'),
+      // new Date('2013-03-25T12:00:00')
     ];
 
     const next = later.schedule(sched).next(5, start, end);
@@ -36,11 +41,16 @@ describe('Cron Examples', function () {
     const start = new Date('2013-03-21T03:05:23Z');
     const end = new Date('2013-03-26T03:40:10Z');
     const expected = [
-      new Date('2013-03-21T10:15:00'),
-      new Date('2013-03-22T10:15:00'),
-      new Date('2013-03-23T10:15:00'),
-      new Date('2013-03-24T10:15:00'),
-      new Date('2013-03-25T10:15:00')
+      new Date(Date.UTC(2013, 2, 21, 10, 15, 0)),
+      new Date(Date.UTC(2013, 2, 22, 10, 15, 0)),
+      new Date(Date.UTC(2013, 2, 23, 10, 15, 0)),
+      new Date(Date.UTC(2013, 2, 24, 10, 15, 0)),
+      new Date(Date.UTC(2013, 2, 25, 10, 15, 0))
+      // new Date('2013-03-21T10:15:00'),
+      // new Date('2013-03-22T10:15:00'),
+      // new Date('2013-03-23T10:15:00'),
+      // new Date('2013-03-24T10:15:00'),
+      // new Date('2013-03-25T10:15:00')
     ];
 
     const next = later.schedule(sched).next(5, start, end);

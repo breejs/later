@@ -8,12 +8,12 @@ describe('Recur Examples', function () {
 
       const sched = later.parse
         .recur()
-        .on(new Date('2013-03-21T11:30:00'))
+        .on(new Date(Date.UTC(2013, 2, 21, 11, 30, 0)))
         .fullDate();
 
       const start = new Date('2013-03-11T03:05:23Z');
       const end = new Date('2013-04-21T03:40:10Z');
-      const expected = new Date('2013-03-21T11:30:00Z');
+      const expected = new Date(Date.UTC(2013, 2, 21, 11, 30, 0));
 
       const next = later.schedule(sched).next(1, start, end);
       next.should.eql(expected);
@@ -49,14 +49,22 @@ describe('Recur Examples', function () {
       const start = new Date('2013-03-21T03:05:23Z');
       const end = new Date('2013-03-21T03:40:10Z');
       const expected = [
-        new Date('2013-03-21T03:05:23'),
-        new Date('2013-03-21T03:10:00'),
-        new Date('2013-03-21T03:15:00'),
-        new Date('2013-03-21T03:20:00'),
-        new Date('2013-03-21T03:25:00'),
-        new Date('2013-03-21T03:30:00'),
-        new Date('2013-03-21T03:35:00'),
-        new Date('2013-03-21T03:40:00')
+        new Date(Date.UTC(2013, 2, 21, 3, 5, 23)),
+        new Date(Date.UTC(2013, 2, 21, 3, 10, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 15, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 20, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 25, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 30, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 35, 0)),
+        new Date(Date.UTC(2013, 2, 21, 3, 40, 0))
+        // new Date('2013-03-21T03:05:23'),
+        // new Date('2013-03-21T03:10:00'),
+        // new Date('2013-03-21T03:15:00'),
+        // new Date('2013-03-21T03:20:00'),
+        // new Date('2013-03-21T03:25:00'),
+        // new Date('2013-03-21T03:30:00'),
+        // new Date('2013-03-21T03:35:00'),
+        // new Date('2013-03-21T03:40:00')
       ];
 
       const next = later.schedule(sched).next(8, start, end);
