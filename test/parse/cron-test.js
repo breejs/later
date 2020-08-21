@@ -1,5 +1,6 @@
 const parse = require('../..').parse.cron;
 const should = require('should');
+const semver = require('semver');
 
 describe('Parse Cron', function () {
   describe('seconds', function () {
@@ -403,7 +404,13 @@ describe('Parse Cron', function () {
 
     it('should parse last in combination', function () {
       const p = parse('* * * * * 5L,4', true);
-      p.schedules[0].should.eql({ d: [5, 6], dc: [0] });
+      // NOTE: Date parsing changed in v10+
+      if (semver.lt(process.version, '11.0.0')) {
+        p.schedules[0].should.eql({ d: [5] });
+        p.schedules[1].should.eql({ d: [6], dc: [0] });
+      } else {
+        p.schedules[0].should.eql({ d: [5, 6], dc: [0] });
+      }
     });
 
     it('should parse multiple last', function () {

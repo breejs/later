@@ -35,6 +35,7 @@
     "nyc": "latest",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
+    "semver": "^7.3.2",
     "should": ">=13.2.3",
     "tinyify": "^3.0.0",
     "xo": "^0.33.0"
