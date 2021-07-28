@@ -89,6 +89,7 @@ Assuming you are using [browserify][], [webpack][], [rollup][], or another bundl
 | -------------- | -------------------------- |
 | **BunKat**     |                            |
 | **Nick Baugh** | <http://niftylettuce.com/> |
+| **yrambler2001** | <https://yrambler2001.me/> |
 
 
 ## License

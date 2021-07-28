@@ -1,7 +1,7 @@
 {
   "name": "@breejs/later",
   "description": "Maintained fork of later. Determine later (or previous) occurrences of recurring schedules",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "author": "BunKat <bill@levelstory.com>",
   "bugs": {
     "url": "https://github.com/breejs/later/issues",
@@ -9,7 +9,8 @@
   },
   "contributors": [
     "BunKat <bill@levelstory.com>",
-    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
+    "yrambler2001 <yrambler2001@gmail.com> (https://yrambler2001.me/)"
   ],
   "dependencies": {},
   "devDependencies": {
