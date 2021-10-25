@@ -1,5 +1,6 @@
 const later = require('../..');
 const should = require('should');
+const sinon = require('sinon');
 
 describe('Set interval', function () {
   it('should execute a callback after the specified amount of time', function (done) {
@@ -32,5 +33,24 @@ describe('Set interval', function () {
     t.clear();
 
     setTimeout(done, 3000);
+  });
+
+  it('should call .setTimeout() with a timezone param', (done) => {
+    sinon.spy(later, 'setTimeout');
+
+    const s = later.parse
+      .recur()
+      .on(new Date(Date.now() + 1e3))
+      .fullDate();
+    later.setInterval(
+      () => {
+        /* noop */
+      },
+      s,
+      'America/New_York'
+    );
+    should.equal(later.setTimeout.calledOnce, true);
+    should.equal(later.setTimeout.getCall(0).args[2], 'America/New_York');
+    done();
   });
 });
