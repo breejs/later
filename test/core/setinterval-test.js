@@ -36,8 +36,7 @@ describe('Set interval', function () {
   });
 
   it('should call .setTimeout() with a timezone param', (done) => {
-    sinon.spy(later, 'setTimeout');
-
+    const spy = sinon.spy(later, 'setTimeout');
     const s = later.parse
       .recur()
       .on(new Date(Date.now() + 1e3))
@@ -51,6 +50,7 @@ describe('Set interval', function () {
     );
     should.equal(later.setTimeout.calledOnce, true);
     should.equal(later.setTimeout.getCall(0).args[2], 'America/New_York');
+    spy.restore();
     done();
   });
 });
