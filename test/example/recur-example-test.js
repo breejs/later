@@ -345,7 +345,7 @@ describe('Recur Examples', function () {
       });
     });
 
-    it.skip('Every hour passing over DST', function () {
+    it('Every hour passing over DST', function () {
       // this test will only pass when DST starts on March 10, 2013 at 2ams
       later.date.localTime();
 
