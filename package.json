@@ -164,7 +164,7 @@
     "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/later.min.js -s later -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
     "nyc": "cross-env NODE_ENV=test nyc mocha test/**/*-test.js --reporter dot",
     "pretest": "yarn run build && yarn run lint",
-    "test": "cross-env NODE_ENV=test mocha test/**/*-test.js --reporter spec",
+    "test": "cross-env NODE_ENV=test mocha test/**/*-test.js --reporter dot",
     "test-coverage": "cross-env NODE_ENV=test nyc yarn run test"
   },
   "unpkg": "dist/later.min.js",
