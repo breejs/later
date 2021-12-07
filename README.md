@@ -96,7 +96,7 @@ Assuming you are using [browserify][], [webpack][], [rollup][], or another bundl
 [MIT](LICENSE) © BunKat
 
 
-##
+## 
 
 [npm]: https://www.npmjs.com/
 

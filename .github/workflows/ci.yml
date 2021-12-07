@@ -37,6 +37,7 @@ jobs:
         run: yarn test-coverage
 
       - name: Run coverage
+        if: ${{ !env.ACT }}
         run: yarn coverage
 
       - name: Uninstall yarn

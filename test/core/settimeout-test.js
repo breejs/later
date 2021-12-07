@@ -10,18 +10,26 @@ describe('Set timeout', function () {
   it('should execute a callback after the specified amount of time', function (done) {
     this.timeout(3000);
 
+    const clock = sinon.useFakeTimers(Date.now());
+
     const s = later.parse.recur().every(2).second();
 
     function test() {
       later.schedule(s).isValid(new Date()).should.eql(true);
-      done();
     }
 
     later.setTimeout(test, s);
+
+    clock.runAll();
+
+    clock.uninstall();
+    done();
   });
 
   it('should allow clearing of the timeout', function (done) {
     this.timeout(3000);
+
+    const clock = sinon.useFakeTimers(Date.now());
 
     const s = later.parse.recur().every(1).second();
 
@@ -32,11 +40,16 @@ describe('Set timeout', function () {
     const t = later.setTimeout(test, s);
     t.clear();
 
-    setTimeout(done, 2000);
+    clock.runAll();
+
+    clock.uninstall();
+    done();
   });
 
   it('should not execute a far out schedule immediately', function (done) {
     this.timeout(3000);
+
+    const clock = sinon.useFakeTimers(Date.now());
 
     const s = later.parse.recur().on(2017).year();
 
@@ -44,16 +57,18 @@ describe('Set timeout', function () {
       should.not.exist(true);
     }
 
-    const t = later.setTimeout(test, s);
+    later.setTimeout(test, s);
 
-    setTimeout(function () {
-      t.clear();
-      done();
-    }, 2000);
+    clock.runAll();
+
+    clock.uninstall();
+    done();
   });
 
   it('should execute a callback for a one-time occurrence after the specified amount of time', function (done) {
     this.timeout(3000);
+
+    const clock = sinon.useFakeTimers(Date.now());
 
     const offsetInMilliseconds = 2000;
     const now = new Date();
@@ -61,10 +76,13 @@ describe('Set timeout', function () {
     const s = later.parse.recur().on(new Date(nowOffset)).fullDate();
 
     function test() {
+      clock.uninstall();
       done();
     }
 
     later.setTimeout(test, s);
+
+    clock.runAll();
   });
 
   describe('timezone support', () => {
