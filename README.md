@@ -1,6 +1,6 @@
 # @breejs/later
 
-[![build status](https://img.shields.io/github/workflow/status/breejs/later/ci)](https://github.com/breejs/later/actions/workflows/ci.yml)
+[![build status](https://github.com/breejs/later/actions/workflows/ci.yml/badge.svg)](https://github.com/breejs/later/actions/workflows/ci.yml)
 [![code coverage](https://img.shields.io/codecov/c/github/breejs/later.svg)](https://codecov.io/gh/breejs/later)
 [![code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
@@ -96,7 +96,7 @@ Assuming you are using [browserify][], [webpack][], [rollup][], or another bundl
 [MIT](LICENSE) © BunKat
 
 
-## 
+##
 
 [npm]: https://www.npmjs.com/
 
