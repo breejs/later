@@ -25,7 +25,7 @@
 
 ## Features
 
-Types of schedules supported by _Later_:
+Types of schedules supported by *Later*:
 
 * Run a report on the last day of every month at 12 AM except in December
 * Install patches on the 2nd Tuesday of every month at 4 AM

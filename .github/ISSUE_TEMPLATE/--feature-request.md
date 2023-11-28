@@ -1,7 +1,8 @@
 ---
+
 name: "⭐ Feature request"
 about: Suggest an idea for Bree
-title: "[feat] DESCRIPTIVE TITLE"
+title: "\[feat] DESCRIPTIVE TITLE"
 labels: enhancement
 assignees: ''
 
@@ -19,4 +20,4 @@ assignees: ''
 
 #### Checklist
 
-- [ ] I have read the documentation and made sure this feature doesn't already exist.
+* [ ] I have read the documentation and made sure this feature doesn't already exist.

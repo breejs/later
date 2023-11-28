@@ -1,7 +1,8 @@
 ---
+
 name: "\U0001F41E Bug report"
 about: Something is not working as it should
-title: "[fix] DESCRIPTIVE TITLE"
+title: "\[fix] DESCRIPTIVE TITLE"
 labels: bug
 assignees: ''
 
@@ -9,8 +10,8 @@ assignees: ''
 
 #### Describe the bug
 
- - Node.js version:
- - OS & version:
+* Node.js version:
+* OS & version:
 
 <!-- A clear and concise description of what the bug is. -->
 
@@ -38,5 +39,5 @@ Example: https://github.com/avajs/ava/blob/master/docs/01-writing-tests.md#faili
 
 #### Checklist
 
-- [ ] I have read the documentation.
-- [ ] I have tried my code with the latest version of Node.js and @breejs/later.
+* [ ] I have read the documentation.
+* [ ] I have tried my code with the latest version of Node.js and @breejs/later.
