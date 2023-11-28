@@ -345,32 +345,32 @@ describe('Recur Examples', function () {
       });
     });
 
-    it.skip('Every hour passing over DST', function () {
-      // this test will only pass when DST starts on March 10, 2013 at 2ams
-      later.date.localTime();
+    // it('Every hour passing over DST', function () {
+    //   // this test will only pass when DST starts on March 10, 2013 at 2ams
+    //   later.date.localTime();
 
-      const sched = later.parse.recur().every(1).hour();
+    //   const sched = later.parse.recur().every(1).hour();
 
-      const start = new Date(2013, 2, 10);
-      const end = new Date(2013, 2, 10, 5);
-      const expected = [
-        new Date(2013, 2, 10, 0),
-        new Date(2013, 2, 10, 1),
-        new Date(2013, 2, 10, 3),
-        new Date(2013, 2, 10, 4),
-        new Date(2013, 2, 10, 5)
-      ];
+    //   const start = new Date(2013, 2, 10);
+    //   const end = new Date(2013, 2, 10, 5);
+    //   const expected = [
+    //     new Date(2013, 2, 10, 0),
+    //     new Date(2013, 2, 10, 1),
+    //     new Date(2013, 2, 10, 3),
+    //     new Date(2013, 2, 10, 4),
+    //     new Date(2013, 2, 10, 5)
+    //   ];
 
-      const next = later.schedule(sched).next(5, start, end);
-      next.should.eql(expected);
+    //   const next = later.schedule(sched).next(5, start, end);
+    //   next.should.eql(expected);
 
-      const previous = later.schedule(sched).prev(5, end, start);
-      previous.should.eql(expected.reverse());
+    //   const previous = later.schedule(sched).prev(5, end, start);
+    //   previous.should.eql(expected.reverse());
 
-      expected.forEach(function (e) {
-        later.schedule(sched).isValid(e).should.eql(true);
-      });
-    });
+    //   expected.forEach(function (e) {
+    //     later.schedule(sched).isValid(e).should.eql(true);
+    //   });
+    // });
 
     it('should recur everyday except on weekends', function () {
       later.date.UTC();
