@@ -841,9 +841,11 @@ later.compile = function (schedDef) {
   function compareFn(dir) {
     return dir === 'next'
       ? function (a, b) {
+          if (!a || !b) return true;
           return a.getTime() > b.getTime();
         }
       : function (a, b) {
+          if (!a || !b) return true;
           return b.getTime() > a.getTime();
         };
   }
@@ -1148,10 +1150,12 @@ later.schedule = function (sched) {
   function compareFn(dir) {
     return dir === 'next'
       ? function (a, b) {
-          return !b || a.getTime() > b.getTime();
+          if (!a || !b) return true;
+          return a.getTime() > b.getTime();
         }
       : function (a, b) {
-          return !a || b.getTime() > a.getTime();
+          if (!a || !b) return true;
+          return b.getTime() > a.getTime();
         };
   }
 

@@ -9,7 +9,8 @@
   },
   "contributors": [
     "BunKat <bill@levelstory.com>",
-    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)"
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
+    "yrambler2001 <yrambler2001@gmail.com> (https://yrambler2001.me/)"
   ],
   "devDependencies": {
     "@babel/cli": "^7.10.5",

@@ -66,6 +66,12 @@ describe('Schedule', function () {
       const s = { schedules: [{ Y: [2017] }] };
       should.equal(schedule(s).next(1, d, e), later.NEVER);
     });
+
+    it('should return next schedule if previous schedule has next date later.NEVER', function () {
+      const d = new Date('2013-03-21T00:00:05Z');
+      const s = { schedules: [{ Y: [2012] }, { Y: [2017] }] };
+      schedule(s).next(1, d).should.eql(new Date('2017-01-01T00:00:00Z'));
+    });
   });
 
   describe('prev', function () {
