@@ -1234,10 +1234,7 @@ later.setTimeout = function (fn, sched, timezone) {
       diff = next[1] ? next[1].getTime() - now : 1e3;
     }
 
-    t =
-      diff < 2147483647
-        ? setTimeout(fn, diff)
-        : setTimeout(scheduleTimeout, 2147483647);
+    t = setTimeout(fn, diff);
   } // scheduleTimeout()
 
   return {
