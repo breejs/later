@@ -46,12 +46,6 @@ See <https://breejs.github.io/later/> for complete documentation and usage.
 npm install @breejs/later
 ```
 
-[yarn][]:
-
-```sh
-yarn add @breejs/later
-```
-
 
 ## Usage
 
@@ -85,10 +79,10 @@ Assuming you are using [browserify][], [webpack][], [rollup][], or another bundl
 
 ## Contributors
 
-| Name           | Website                    |
-| -------------- | -------------------------- |
-| **BunKat**     |                            |
-| **Nick Baugh** | <http://niftylettuce.com/> |
+| Name             | Website                    |
+| ---------------- | -------------------------- |
+| **BunKat**       |                            |
+| **Nick Baugh**   | <http://niftylettuce.com/> |
 | **yrambler2001** | <https://yrambler2001.me/> |
 
 
@@ -100,8 +94,6 @@ Assuming you are using [browserify][], [webpack][], [rollup][], or another bundl
 ##
 
 [npm]: https://www.npmjs.com/
-
-[yarn]: https://yarnpkg.com/
 
 [browserify]: https://github.com/browserify/browserify
 

@@ -156,16 +156,16 @@
     "build:dist": "npm run browserify && npm run minify",
     "build:lib": "babel --config-file ./.lib.babelrc src --out-dir lib",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov",
-    "lint": "yarn run lint:js && yarn run lint:md && yarn run lint:lib && yarn run lint:dist",
+    "lint": "npm run lint:js && npm run lint:md && npm run lint:lib && npm run lint:dist",
     "lint:dist": "eslint --no-inline-config -c .dist.eslintrc dist",
     "lint:js": "xo",
     "lint:lib": "eslint -c .lib.eslintrc lib",
     "lint:md": "remark . -qfo",
     "minify": "cross-env NODE_ENV=production browserify src/index.js -o dist/later.min.js -s later -g [ babelify --configFile ./.dist.babelrc ] -p tinyify",
     "nyc": "cross-env NODE_ENV=test nyc mocha test/**/*-test.js --reporter dot",
-    "pretest": "yarn run build && yarn run lint",
+    "pretest": "npm run build && npm run lint",
     "test": "cross-env NODE_ENV=test mocha test/**/*-test.js --reporter dot --exit",
-    "test-coverage": "cross-env NODE_ENV=test nyc yarn run test"
+    "test-coverage": "cross-env NODE_ENV=test nyc npm run test"
   },
   "unpkg": "dist/later.min.js",
   "xo": {
